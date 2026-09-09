@@ -12,27 +12,27 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
   :root{
-    --paper:#0f172a;
-    --paper-card:#1e293b;
-    --paper-dark:#334155;
+    --paper:#000000;
+    --paper-card:#141414;
+    --paper-dark:#232323;
     --ink:#ffffff;
-    --ink-soft:#cbd5e1;
-    --ink-faint:#94a3b8;
-    --line:#334155;
-    --gold:#dc2626;
-    --gold-soft:#ef4444;
-    --red:#dc2626;
-    --red-soft:#ef4444;
-    --red-bg:rgba(220, 38, 38, 0.15);
-    --shadow: 0 10px 30px -12px rgba(0,0,0,0.5);
+    --ink-soft:#cfcfcf;
+    --ink-faint:#8a8a8a;
+    --line:#2a2a2a;
+    --gold:#ff0071;
+    --gold-soft:#ff3d8f;
+    --red:#ff0071;
+    --red-soft:#ff3d8f;
+    --red-bg:rgba(255, 0, 113, 0.15);
+    --shadow: 0 10px 30px -12px rgba(0,0,0,0.6);
   }
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
   body{
     background:
-      linear-gradient(rgba(15,23,42,0.93), rgba(15,23,42,0.93)) center / 100% 100% no-repeat fixed,
-      radial-gradient(1200px 600px at 10% -10%, rgba(184,145,43,0.10), transparent 60%),
-      radial-gradient(1000px 500px at 110% 10%, rgba(140,47,38,0.08), transparent 55%),
+      linear-gradient(rgba(0,0,0,0.93), rgba(0,0,0,0.93)) center / 100% 100% no-repeat fixed,
+      radial-gradient(1200px 600px at 10% -10%, rgba(255,0,113,0.10), transparent 60%),
+      radial-gradient(1000px 500px at 110% 10%, rgba(255,0,113,0.08), transparent 55%),
       url('icon.jpg') center / 100% 100% no-repeat fixed,
       var(--paper);
     color:var(--ink);
@@ -70,7 +70,7 @@
     font-family:'Montserrat',sans-serif;font-weight:600;font-size:0.88rem;border-radius:4px;border:1px solid var(--ink);
     padding:11px 18px;cursor:pointer;background:var(--ink);color:var(--paper-card);transition:transform .12s ease, box-shadow .12s ease;
   }
-  button:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(28,43,34,0.25);}
+  button:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(255,0,113,0.25);}
   button:active{transform:translateY(0);}
   button.secondary{background:transparent;color:var(--ink);border:1px solid var(--ink);}
   button.danger{background:var(--red);border-color:var(--red);color:#fff;}
@@ -87,7 +87,7 @@
   .role-chip{flex:none;text-align:right;}
   .role-chip .badge{display:inline-block;padding:4px 10px;border-radius:20px;font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;}
   .badge.senato{background:var(--red-bg);color:var(--red);border:1px solid var(--red-soft);}
-  .badge.giocatore{background:#e5e9dd;color:var(--ink-soft);border:1px solid var(--line);}
+  .badge.giocatore{background:#1f1f1f;color:var(--ink-soft);border:1px solid var(--line);}
   .logout-link{display:block;background:none;border:none;color:var(--ink-faint);font-size:0.72rem;text-decoration:underline;padding:0;cursor:pointer;font-family:'Montserrat',sans-serif;font-weight:500;}
   .logout-link:hover{transform:none;box-shadow:none;color:var(--ink);}
 
@@ -128,7 +128,7 @@
   table{width:100%;border-collapse:collapse;font-size:0.86rem;}
   thead th{text-align:left;text-transform:uppercase;font-size:0.66rem;letter-spacing:0.06em;color:var(--ink-faint);border-bottom:2px solid var(--ink);padding:0 8px 8px;font-weight:700;}
   tbody td{padding:10px 8px;border-top:1px solid var(--line);vertical-align:top;}
-  tbody tr:hover{background:rgba(184,145,43,0.06);}
+  tbody tr:hover{background:rgba(255,0,113,0.06);}
   td.num, th.num{text-align:right;}
   .protocollo{color:var(--ink-faint);font-size:0.78rem;}
   .amt{font-family:'JetBrains Mono',monospace;font-weight:700;}
@@ -172,8 +172,8 @@
   .reorder-btns button{padding:2px 9px;font-size:0.68rem;line-height:1.4;}
   .new-fine-form{padding-bottom:18px;margin-bottom:4px;border-bottom:1px dashed var(--line);}
 
-  .toast-wrap{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(28,43,34,0.35);z-index:50;}
-  .toast-card{background:var(--paper-card);border:1px solid var(--ink);border-radius:6px;padding:32px 40px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,0.35);animation:pop .35s cubic-bezier(.2,1.6,.4,1);}
+  .toast-wrap{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.55);z-index:50;}
+  .toast-card{background:var(--paper-card);border:1px solid var(--ink);border-radius:6px;padding:32px 40px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,0.6);animation:pop .35s cubic-bezier(.2,1.6,.4,1);}
   @keyframes pop{from{transform:scale(0.6) rotate(-8deg);opacity:0;}to{transform:scale(1) rotate(0);opacity:1;}}
   .toast-card .seal{width:90px;height:90px;margin:0 auto 12px;}
   .toast-card h3{margin:0 0 4px;font-size:1.1rem;}
